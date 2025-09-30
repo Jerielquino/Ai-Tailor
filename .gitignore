@@ -1,0 +1,17 @@
+# node
+node_modules/
+npm-debug.log*
+.next/
+out/
+
+# python
+__pycache__/
+*.pyc
+.venv/
+.env
+.env.*
+tailor.db
+
+# misc
+.DS_Store
+
