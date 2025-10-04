@@ -1,17 +1,23 @@
-# node
-node_modules/
-npm-debug.log*
-.next/
-out/
-
-# python
+# Python
+.venv/
 __pycache__/
 *.pyc
-.venv/
+*.pyo
+*.pyd
+
+# Node
+node_modules/
+.next/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Env & local
 .env
 .env.*
+.DS_Store
 tailor.db
 
-# misc
-.DS_Store
-
+# Build artifacts
+dist/
+build/

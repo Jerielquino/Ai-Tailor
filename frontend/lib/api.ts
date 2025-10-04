@@ -6,17 +6,8 @@ export type AnalyzeResponse = {
   tailored_bullets: string[];
   notes: { jaccard?: number; skill_match?: number };
 };
-
-// Read API base from env in production; fall back to local for dev
-const API_BASE =
-  (typeof process !== "undefined" && process.env.NEXT_PUBLIC_API_URL) ||
-  "http://127.0.0.1:8000";
-
-export async function analyze(
-  job_text: string,
-  resume_text: string,
-  use_llm: boolean
-): Promise<AnalyzeResponse> {
+const API_BASE = process.env.NEXT_PUBLIC_API_URL ?? "/api";
+export async function analyze(job_text: string, resume_text: string, use_llm: boolean): Promise<AnalyzeResponse> {
   const r = await fetch(`${API_BASE}/analyze`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
